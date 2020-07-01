@@ -1,0 +1,290 @@
+ /*CSS VOOR SHOWCASE.HTML*/
+ 
+ 
+ 
+ /*TYPOGRAFIE************************************************************************************
+        ***********************************************************************************************/ 
+        nav a, .andere_titel{
+            font-family: 'Cinzel', serif;
+            text-decoration: none;
+        }
+        .andere_link{
+            font-family: 'Trirong', serif;
+        }
+        .main_intro {
+            font-family: 'Trirong', serif;
+        }
+        .main_titels{
+            font-family: 'Ubuntu', sans-serif;
+        }
+        .main_subtitels{
+            font-family: 'Raleway', sans-serif
+        }
+        .main_sub_subtitels_info, .main_sub_subtitels{
+            font-family: 'Habibi', serif;
+        }
+        /*LAYOUT****************************************************************************************/
+        /***********************************************************************************************/
+        body{
+            margin-top: 0;
+        }
+        .decoratie_balk{
+            height: 30px;
+            display: grid;
+            grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );
+        }
+        .decoratie_balk>*{
+            align-self: center;
+            justify-self: center;
+        }
+        .nav_flex{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .nav_flex>*{
+            width: 99%;
+            margin-bottom: .15rem;
+        }
+        nav ul{
+            padding: 0;
+        }
+        nav li{
+            list-style-type: none;
+            border: 1px solid;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-size: 3rem;
+        }
+        .wrapper_content_grid_main >*{
+            margin-bottom: 2rem;
+        }
+        .main_pic img{
+            width: 100%;
+            border-radius: 5px;
+        }
+        .main_info{
+            display: grid;
+        }
+        .main_info>*{
+            margin: .5ch 1ch 0 1ch;
+        }
+        .main_info> .beginzin, .main_info> .slotzin{
+            margin: 1ch;
+        } 
+        .slotzin{
+            align-self: end;    
+        }
+        .main_intro{
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .wrapper_content_grid_aside{
+            display: grid;
+        }
+        .andere_titel{
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: .05rem;
+        }
+        .andere_link{
+            font-size: 1.15rem;
+            text-decoration: none;
+            text-decoration: none;
+            padding-left: .5ch;
+        }
+        .main_blok_hoofdtitel{
+            font-size: larger;
+        }
+        .main_subtitels{
+            font-size: 2rem;
+        }
+        .main_sub_subtitels{
+            font-size: 1.2rem;
+        }
+        .main_blok_info{
+            display: grid;
+        }
+        .main_blok_info >*{
+            margin-left: .4ch;
+            margin-right: .5ch;
+        }
+        .main_blok_info_titel h4{
+            padding-bottom: .2rem;
+        }
+        .pers_informatie_container{
+            position: relative;
+            top: -4.5rem;
+        }
+        .grid_half{
+            display: grid;
+            grid-template-columns: 1fr 3.5fr;
+            grid-auto-rows: minmax(35px,35px)
+        }
+        .grid_half>*{
+            align-self: center;
+        }
+        /*KLEUR EN ACHTERGROND************************************************************************************
+        *********************************************************************************************************/
+        
+        .decoratie_balk{
+            background-color: rgba(17, 16, 16, 0.829);
+            color: rgb(233, 225, 225);
+        }
+        .nav_flex li{
+            background-image: linear-gradient(to right,rgba(236, 236, 220, 0.527),rgba(255, 255, 240, 0.432));
+        }
+        .nav_flex a{
+            color: rgb(218, 29, 38);
+        }
+        nav a:hover{
+            opacity: .5;   
+        }   
+        .active_link{
+            text-decoration: underline;
+        }
+        .andere_titel{
+            color: red;
+            border: 1px solid tomato;
+            border-bottom: 2px solid red;
+        }
+        .andere_link{
+            color: darkslategray;
+            background: rgba(243, 241, 241, 0.108);
+            border-bottom: .5px ridge #ebe7e7;  
+        }
+        .andere_link:hover{
+            opacity: .5;
+        }
+        .wrapper_content_grid_aside a:nth-child(5){
+                border-bottom: 0;
+        }
+        .wrapper_content_grid_main_intro >*, .wrapper_content_grid_aside, .pers_informatie_container{
+            background-image: linear-gradient(to right,rgba(202, 207, 201, 0.041),rgba(230, 230, 221, 0.096),rgba(231, 224, 224, 0.027));
+        }
+        .pers_informatie_container>*{
+            margin-left: 1ch;
+        }
+        .main_blok_hoofdtitel{
+                visibility: hidden;
+        }
+        .main_subtitels{
+            color: rgba(92, 92, 114, 0.281);
+            border-bottom: 2px double rgba(128, 128, 128, 0.137);
+        }
+        .main_sub_subtitels{
+            color: rgb(0, 0, 0);
+        }
+        /*RESPONSIEF*/
+        @media (min-width: 600px)
+        {
+            /*TYPOGRAFIE*/
+            .andere_titel{
+                font-family: 'Cinzel', serif;
+            }
+            /*LAYOUT*/
+            .decoratie_balk{
+                margin-bottom: 2rem;
+            }
+            header{
+                margin-top: 2rem;
+            }
+            .nav_flex{
+                flex-direction: row;
+            }
+            nav li{
+                width: 99%;
+                font-size: 2rem;
+            }
+            .wrapper_content{
+            max-width: 1100px;
+            width: 95%;
+            margin: auto;
+            }
+            .wrapper_content_grid{
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+                grid-auto-rows: auto;
+            }
+            .wrapper_content_grid_main_intro{
+                display: grid;
+                grid-gap: 1ch;
+                grid-template-columns: 1.5fr 4fr;
+                margin: 4rem 3rem 0 0;
+            }
+            .wrapper_content_grid_main{
+                display: grid;
+                grid-gap: 1ch;
+                margin: 4rem 3rem 0 0;
+            }
+            .main_pic{  
+                justify-self: center;
+                padding: 1.5ch .5ch .5ch;
+            }
+            .wrapper_content_grid_aside{
+                margin: 0 .25rem 0 0rem;
+                margin-top: 4rem;
+                align-content: center;
+                padding: 0.3rem;
+            }
+            .main_intro{
+                font-size: 1rem;
+                font-weight: initial;
+            }
+            .main_subtitels{
+                font-size: 1rem;
+                }
+            .main_sub_subtitels{
+                font-size: smaller
+            }
+            .main_blok_hoofdtitel{
+                visibility: visible;
+            }
+            .pers_informatie_container{
+            position: relative;
+            top: 0rem;
+            }
+            /*Kleur*/
+            body{
+                background-image: url(https://images.unsplash.com/photo-1471445281684-fdf28e036aa8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&w=1000&q=80);
+                background-size: cover;
+            }
+            
+            .decoratie_balk{
+                border-bottom: 3px solid transparent;
+                border-image: linear-gradient(to right, rgba(231, 245, 238, 0.664), rgba(205, 209, 206, 0.342), rgba(231, 245, 238, 0.664));
+                border-image-slice: 1;    
+            }
+            .main_pic, .main_info, .wrapper_content_grid_aside, .pers_informatie_container{
+                border-top: 4px solid lightgray;
+                border-radius: 15px;
+                border-left: .5px ridge #ebe7e7;
+            }
+            .main_intro,.main_info{
+                color: rgba(255, 255, 255, 0.788)
+            }
+            .pers_informatie_container{
+                background: rgba(14, 14, 14, 0.521);
+            }
+            .main_pic{
+                background: rgba(182, 181, 181, 0.507)
+            }
+            .main_intro{
+                background-image: linear-gradient(to right, rgba(68, 68, 68, 0.274), rgba(213, 233, 231, 0.432));
+                color: rgb(212, 212, 212);
+            }
+            
+            .main_sub_subtitels_info, .main_sub_subtitels{
+                color: rgb(255, 255, 231);
+            }
+            .main_subtitels{
+                color: rgba(165, 165, 126, 0.904);
+            }
+            .main_titels{
+                color: rgb(214, 38, 7)
+            }
+            .wrapper_content{
+                opacity: 1
+            }
+        }

@@ -1,0 +1,235 @@
+/*CSS VOOR TEST LEVEL3*/
+        /**********
+        Typografie
+        **********/
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .inhoud h2, .inhoud h3{
+            font-size: 1.1rem;
+        }
+        aside h3{
+            font-style: italic;
+        }
+        strong{
+            font-size: 1.2rem;
+            letter-spacing: .5ch;
+        }
+        /*****************
+        Structuur & Layout
+        *****************/
+        p, a, h1, h2, h3{
+            margin: 1ch;
+        }
+        .wrapper_content li{
+            margin: 0;
+        }
+        .flex_column{
+            display: flex;
+            flex-direction: column; 
+        }
+        .flex_column li,.flex_column h3{
+            margin-bottom: 1ch;
+        }
+        .nav_titel{
+            max-height: 50px;
+        }
+        .nav_balk ul, .tags ul{
+            list-style-type: none;
+            padding: 0;
+        }
+        .nav_balk a, .blokje a{
+            text-decoration: none;
+        }
+        .inhoud_img{
+            width: 98%;
+            margin: 1ch auto;
+        }
+        .p_hyperlink{
+            text-decoration: none;
+            margin: 0;
+        }
+        /******
+        Kleuren
+        ******/
+        .body{
+            color: #222222;
+        }
+        .nav_titel h2{
+            color: black;
+            background: white;
+        }
+        .nav_lijst{
+            color: white;
+            background: #474747;
+        }
+        .nav_lijst a,.andere_werken h3, .andere_werken a, .tags a{
+            color: white;
+        }
+        .nav_lijst a:hover{
+            background: #ececec;
+            color: #222222
+        }
+        .feiten_en_weetjes{
+            background: #474747;
+        }
+        .tags{
+            background: #373737
+        }
+        .andere_werken {
+            background: #272727;
+        }
+        .andere_werken ul{
+            color: white;
+        }
+        .andere_werken a:hover{
+            text-decoration: underline;
+        }
+        aside{
+            color: white
+        }
+        .p_hyperlink{
+            
+            color: indigo;
+        }
+        
+        /*************
+        Responsiveness
+        *************/
+        @media (min-width: 640px){
+            /*Typografie*/
+            .inhoud h2, .inhoud h3{
+                font-size: 1.5rem
+            }
+            aside p, aside li{
+                font-size: .7rem;
+            }
+            .feiten_gegeven{
+                font-weight: bolder;
+            }
+            /*Layout*/
+            .andere_ul_links{
+                display: none;
+            }
+            .wrapper{
+            max-width: 1100px;
+            margin: auto;
+            }
+            .wrapper_content{
+            width: 65%;
+            margin: auto;
+            }
+            .balk_achtergrond{
+                min-height: 50px;
+                max-height: 50px;
+                margin: 1.5rem 0 1.5rem 0;
+            }
+            .nav_lijst{
+                max-height: 50px;
+            }
+            .nav_titel{
+            max-width: 150px;
+            }
+            .nav_balk{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            .nav_lijst{
+                justify-self: self-end;
+            }
+            .nav_lijst_ul{
+                flex-direction: row;
+            }
+            .main_grid{
+                display: grid;
+                grid-template-columns: 70% 30%;
+            }
+            .inhoud{
+                order: 1;
+                padding: 4% 0 4% 0;
+                box-shadow: 16px 4px 8px 0 rgba(0, 0, 0, 0.2);
+            }
+            .blokje{
+                order: 2
+            }
+            aside>*{
+                padding: .7rem;
+            }
+            aside p{
+                margin: .2rem;
+            }
+            .feiten_en_weetjes, .tags li, .andere_werken{
+                display: grid;
+            }
+            .tags li{
+                grid-template-columns: 3fr 1fr;
+            }
+            .tags li>*{
+                align-self: center;
+            }
+            .tags li a{
+                margin-left: .6rem;
+            }
+            .feiten_en_weetjes>*, .tags>*{
+                margin-left: .7rem;
+            }
+            .feiten_gegeven{
+                margin-left: 2rem;
+            }
+            .andere_thumbs{
+                display: grid;
+                grid-gap: .2rem;
+                grid-template-columns: 1fr 1fr;
+                padding: 0;
+                margin: 0;
+            }
+            .andere_thumbs a{
+                min-height: 50px;
+                max-height: 50px;
+                border: 4px solid #FFC0CB
+            }
+            .andere_thumbs img{
+                width: 100%;
+                min-height: 50px;
+                max-height: 50px;
+            }
+            /*Kleur en achtergrond*/
+            .wrapper{
+                background-color: #ff0000;
+                background-image: url(img/rothko/rothko17.jpg);
+                background-size: cover;
+            }
+            .balk_achtergrond{
+                background: #373737;
+            }
+            .nav_balk>*{
+                background: #373737;
+            }
+            .nav_titel h2{
+                color: white;
+                background: #373737;
+            }
+            .nav_lijst a:hover{
+                color: #5C90DB;
+                background: #373737;
+            }
+            .inhoud{
+                background: white;
+            }
+            aside{
+                background: #272727
+            }
+            .tags li{
+                background: #272727;
+                border-radius: 15px;
+            }
+            .tags li:hover{
+                background: #575757;
+            }
+        }
+        @media (max-width: 640px){
+
+            .tags, .feiten_en_weetjes, .andere_thumbs{
+                display: none;
+            }    
+        }    
