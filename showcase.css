@@ -166,7 +166,7 @@
             color: red;
             border: 1px solid tomato;
             border-bottom: 2px solid red;
-            background-image: linear-gradient(grey,black);
+            background-image: linear-gradient(rgba(128, 128, 128, 0.801),rgba(0, 0, 0, 0.712));
         }
         .andere_link{
             color: darkslategray;
@@ -208,7 +208,9 @@
         .main_titels{
             color: rgb(214, 38, 7)
         }
-        
+        .pers_informatie_container{
+            background: rgba(0, 0, 0, 0.74);
+        }
         /*RESPONSIEF*/
         @media (min-width: 600px)
         {
@@ -314,5 +316,8 @@
             }
             #aside-projects-id a{
                 color: ivory;
+            }
+            .andere_titel{
+                background: rgba(0, 25, 40, 0.774)
             }
         }
