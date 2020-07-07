@@ -69,6 +69,7 @@
         }
         .main_info>*{
             margin: .5ch 1ch 0 1ch;
+            justify-self: center;
         }
         .main_info> .beginzin, .main_info> .slotzin{
             margin: 1ch;
@@ -80,6 +81,7 @@
             font-size: 1.2rem;
             font-weight: 600;
         }
+        
         .wrapper_content_grid_aside{
             display: grid;
         }
@@ -97,6 +99,17 @@
         .main_blok_hoofdtitel{
             font-size: larger;
         }
+        /*start pers info blok*/
+        .main_blok_hoofdtitel{
+            /*visibility: hidden;*/
+        }
+        .pers_informatie_container{
+            /*
+            position: relative;
+            top: -4.5rem;
+            */
+        }
+        /*einde pers info blok*/
         .main_subtitels{
             font-size: 2rem;
         }
@@ -113,10 +126,6 @@
         .main_blok_info_titel h4{
             padding-bottom: .2rem;
         }
-        .pers_informatie_container{
-            position: relative;
-            top: -4.5rem;
-        }
         .grid_half{
             display: grid;
             grid-template-columns: 1fr 3.5fr;
@@ -125,18 +134,24 @@
         .grid_half>*{
             align-self: center;
         }
+        .pers_informatie_container{
+            position: relative;
+            top: 0rem;
+            padding-bottom: 1rem;
+            padding-top: 1rem;
+        }
         /*KLEUR EN ACHTERGROND************************************************************************************
         *********************************************************************************************************/
         body{
-            background-image: url(img/bg1.jpg);
-            
+            background-image: url(img/photo-1568041963860-f95de965518e.jpg);
+            background-size: contain;
         }
         .decoratie_balk{
             background-color: rgba(17, 16, 16, 0.829);
             color: rgb(233, 225, 225);
         }
         .nav_flex li{
-            background-image: linear-gradient(to right,rgba(236, 236, 220, 0.527),rgba(255, 255, 240, 0.432));
+            background-image: linear-gradient(to right,rgba(236, 236, 220, 0.137),rgba(255, 255, 240, 0.377));
         }
         .nav_flex a{
             color: rgb(218, 29, 38);
@@ -151,10 +166,11 @@
             color: red;
             border: 1px solid tomato;
             border-bottom: 2px solid red;
+            background-image: linear-gradient(grey,black);
         }
         .andere_link{
             color: darkslategray;
-            background: rgba(243, 241, 241, 0.108);
+            background: rgba(255, 255, 240, 0.377);
             border-bottom: .5px ridge #ebe7e7;  
         }
         .andere_link:hover{
@@ -169,16 +185,30 @@
         .pers_informatie_container>*{
             margin-left: 1ch;
         }
-        .main_blok_hoofdtitel{
-                visibility: hidden;
-        }
+        
         .main_subtitels{
             color: rgba(92, 92, 114, 0.281);
             border-bottom: 2px double rgba(128, 128, 128, 0.137);
         }
         .main_sub_subtitels{
-            color: rgb(0, 0, 0);
+            color: red
         }
+        .main_info{
+            background-image: linear-gradient(rgba(213, 233, 223, 0.884),rgba(170, 180, 179, 0.555),rgba(190, 187, 187, 0.521));    
+        }
+        .main_intro{
+            color: rgba(0, 0, 0, 0.39);
+        }
+        .main_sub_subtitels_info, .main_sub_subtitels{
+            color: rgb(255, 255, 231);
+        }
+        .main_subtitels{
+            color: rgba(165, 165, 126, 0.904);
+        }
+        .main_titels{
+            color: rgb(214, 38, 7)
+        }
+        
         /*RESPONSIEF*/
         @media (min-width: 600px)
         {
@@ -234,20 +264,19 @@
             .main_intro{
                 font-size: 1rem;
                 font-weight: initial;
+                
             }
             .main_subtitels{
                 font-size: 1rem;
-                }
+            }
             .main_sub_subtitels{
                 font-size: smaller
             }
             .main_blok_hoofdtitel{
                 visibility: visible;
             }
-            .pers_informatie_container{
-            position: relative;
-            top: 0rem;
-            }
+            
+            
             /*Kleur*/
             body{
                 background-image: url(https://images.unsplash.com/photo-1471445281684-fdf28e036aa8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&w=1000&q=80);
@@ -264,8 +293,12 @@
                 border-radius: 15px;
                 border-left: .5px ridge #ebe7e7;
             }
-            .main_intro,.main_info{
+            .main_intro,.main_info, .beginzin{
                 color: rgba(255, 255, 255, 0.788)
+            }
+            .main_intro{
+                background-image: linear-gradient(to right, rgba(68, 68, 68, 0.274), rgba(213, 233, 231, 0.432));
+                color: rgb(212, 212, 212);
             }
             .pers_informatie_container{
                 background: rgba(14, 14, 14, 0.521);
@@ -273,21 +306,13 @@
             .main_pic{
                 background: rgba(182, 181, 181, 0.507)
             }
-            .main_intro{
-                background-image: linear-gradient(to right, rgba(68, 68, 68, 0.274), rgba(213, 233, 231, 0.432));
-                color: rgb(212, 212, 212);
-            }
-            
-            .main_sub_subtitels_info, .main_sub_subtitels{
-                color: rgb(255, 255, 231);
-            }
-            .main_subtitels{
-                color: rgba(165, 165, 126, 0.904);
-            }
             .main_titels{
                 color: rgb(214, 38, 7)
             }
             .wrapper_content{
                 opacity: 1
+            }
+            #aside-projects-id a{
+                color: ivory;
             }
         }
