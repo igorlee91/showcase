@@ -96,6 +96,7 @@
             background-image: url(https://p7.hiclipart.com/preview/146/292/1009/button-download-computer-file-red-button.jpg);
             background-size: cover;
         }
+        
         .button-section button:focus{
             outline: 0;
         }
@@ -109,6 +110,7 @@
             flex-direction: column;
             min-width: 55px;
             justify-content: flex-start;
+            display: grid;
         }
         .art-label label{
             margin: .3rem;
@@ -349,18 +351,20 @@
                             <div class="art-label">
                                 <label for="name-recipe" id=label-recipe-id>Name:</label>
                                 <label for="info-recipe" id=recipe-info-id>Info:</label>
+                                <div class="uploadfile">
+                                    <label for="img">Select image:</label>
+                                    <input type="file" id="img" name="img" accept="image/*">
+                                    <input type="submit">
+                                </div>
                                 <div class="submitbutton">
                                     <button id="submitbutton-id">Submit</button>
-                                </div>
-                                
+                                </div> 
                             </div>
                             <div class="art-input">
                                 <input id="input-recipe-id" name="recipe-id" type="text" autofocus>
                                 <textarea placeholder="place your details here" id="textarea-id" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
                             </div>
-                            <!--
-<input type="file" name="fileToUpload" id="fileToUpload">
-                            -->
+                            
                             
                             
                     </div>
@@ -368,14 +372,7 @@
                         <div class="recently-added-title">
                             <h3>Recently Added</h3>     
                         </div>           
-                        <ul class="recently-added-ul" id="recently_added_ul-id">
-                            
-                            
-                            <!--
-                            <a href="#" style="order: 2"><li>Pizza</li></a>
-                            <a href="#" style="order: 1"><li>Macaroni with cheese</li></a>  
-                            -->
-                        </ul>    
+                        <ul class="recently-added-ul" id="recently_added_ul-id"></ul>    
                     </aside>
             </div>
             <!--End Flex-button-form-->
@@ -404,11 +401,7 @@
 <script>
 window.onload=function(){
     
-
-    
-    /**/
-    
-        for(let x=0; x<localStorage.length; x++)
+    for(let x=0; x<localStorage.length; x++)
         {
             if(localStorage.key(x).includes("recipes"))
             {   
@@ -417,35 +410,34 @@ window.onload=function(){
                 let article_recipe = document.createElement('div');
                 let article_recipe_title = document.createElement('h2');
                 let article_recipe_p = document.createElement('p');
-                //(buttons)
-                let article_recipe_removebutton = document.createElement('button');
-                let article_recipe_editbutton = document.createElement('button');
-                //(end buttons)
+                    //(buttons)
+                    let article_recipe_removebutton = document.createElement('button');
+                    let article_recipe_editbutton = document.createElement('button');
+                        article_recipe_removebutton.innerText = "Remove this article";
+                        article_recipe_editbutton.innerText = "Edit";
+                        article_recipe_removebutton.className = "article_buttons";
+                        article_recipe_editbutton.className = "article_buttons";
+                        article_recipe_editbutton.classList.add("article_buttons_edit");
+                    //(end buttons)
                 let recently_added_a = document.createElement('a');
                 let recently_added_li = document.createElement('li');
                 let article_button_div = document.createElement( 'div');
-                /*________Characteristics_____________________________________________*/
-                article_recipe_title.id="article_title-id";
-                article_recipe.classList="article-title";
-                if(
-                    localStorage.key(x).includes("recipes")
-                ){
-                    article_recipe_title.innerText = JSON.parse(  localStorage.getItem(localStorage.key(x))   )[0];
-                    article_recipe_p.innerText = JSON.parse( localStorage.getItem( localStorage.key(x)  )   )[1];
-                    
-                }
+
+                    /*________Characteristics_____________________________________________*/
+                    article_recipe_title.id="article_title-id";
+                    article_recipe.classList="article-title";
+                    if(
+                        localStorage.key(x).includes("recipes")
+                    ){
+                        article_recipe_title.innerText = JSON.parse(  localStorage.getItem(localStorage.key(x))   )[0];
+                        article_recipe_p.innerText = JSON.parse( localStorage.getItem( localStorage.key(x)  )   )[1];
+                        
+                    }
+                    article_recipe.style.order = x;
+                    article_recipe.classList.add('article_recipe');
+                    article_recipe_p.id = "article_p-id";
+                    article_button_div.id = "article_button_div-id";
                 
-                article_recipe.style.order = x;
-                article_recipe.classList.add('article_recipe');
-                
-                article_recipe_p.id = "article_p-id";
-                article_button_div.id = "article_button_div-id";
-                //(buttons)
-                article_recipe_removebutton.innerText = "Remove this article";
-                article_recipe_editbutton.innerText = "Edit";
-                article_recipe_removebutton.className = "article_buttons";
-                article_recipe_editbutton.className = "article_buttons";
-                article_recipe_editbutton.classList.add("article_buttons_edit");
                 //(event-listeners)
                 article_recipe_removebutton.addEventListener("click",function(){
                     localStorage.removeItem(localStorage.key(x));
@@ -456,8 +448,6 @@ window.onload=function(){
                 
                 //generation textarea for editing
                 article_recipe_editbutton.addEventListener("click", function(){
-                    
-                    
                     //______var naming_________________________________________/
                     let editwindow_textarea = document.createElement('textarea');
                     let editwindowdiv = document.createElement('div');
@@ -522,8 +512,9 @@ window.onload=function(){
                 /*________Appending_____________________________________________*/
                 article_recipe.append(article_recipe_title);
                 article_recipe.append(article_recipe_p);
-                article_button_div.append(article_recipe_removebutton);
                 article_button_div.append(article_recipe_editbutton);
+                article_button_div.append(article_recipe_removebutton);
+                
                 article_recipe.append(article_button_div);
                 document.getElementById('flex_container_articles-id').append(article_recipe);
                 recently_added_a.append(recently_added_li);
@@ -543,7 +534,8 @@ window.onload=function(){
     document.getElementById('submitbutton-id').addEventListener("click",add2local);
     document.getElementById('removebutton-id').addEventListener("click",clearls);
     
-    }//End window.onload
+    }
+    //End window.onload
     /*******************
     Functions
     *******************/
@@ -584,12 +576,6 @@ window.onload=function(){
         
         
         history.go(0);
-    }
-    function add_random(key,value){
-        localStorage.setItem(key,value)
-    }
-    document.getElementById("randombutton").onclick = function(){
-        add_random("a","test");
     }
     document.getElementById('form-appear-id').style.visibility = "hidden";
     if(document.getElementById('add-new').innerText = "Add new recipe"){
