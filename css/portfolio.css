@@ -292,7 +292,7 @@ body{
         min-height: 92px;
         align-self: end;
         display: grid;
-            border-bottom: 4px solid rgb(255, 255, 255);
+            border-bottom: 1px solid rgb(255, 255, 255);
             border-radius: 4%;
         /*
         grid-template-columns: 0.2fr 1fr;
