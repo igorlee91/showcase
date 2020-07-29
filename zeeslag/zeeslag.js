@@ -54,119 +54,123 @@ window.onload = function(){
         
         document.getElementById('plaatsschip').type = "button";
         document.getElementById('plaatsschip').addEventListener("click",function(){
-            let huidige_schips_foto = document.createElement('img');
-            huidige_schips_foto.src = `img/${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.afbeelding.value}`;
-            let huidige_schips_lengte = Number(`${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.lengte.value}`);
-            switch (0) {
-                case document.getElementById('schepen').selectedIndex:
-                    toon_fout('kies een schip');
-                    break;
-                case document.getElementById('rij').selectedIndex:
-                    toon_fout('kies een rij');
-                    break;
-                case document.getElementById('kolom').selectedIndex:
-                    toon_fout('kies een kolom');
-                    break;
-                default:
-                    toon_fout('');
-                    let gekozen_optie = document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)];
-                    let gekozen_schip_naam = gekozen_optie.attributes.naam.value;
-                    //console.log(gekozen_schip_naam);
-                    
-                    
-                    if(document.getElementById('horizontaal').checked === true){
-                        //controle horizontaal
-                        controle_horizontaal();  
-                    }
-                    if(document.getElementById('verticaal').checked === true){
-                        //append verticaal
-                        controle_verticaal();            
-                    }
-                    break;
-            }
-            /*plaats() functies */
-            function controle_horizontaal(){
-                if((document.getElementById('kolom').selectedIndex+ huidige_schips_lengte)>11){
-                    toon_fout('boot is over de grens');
-                }
-                else{
-                    let controlegetal = "";
-                    for(x=0; x<huidige_schips_lengte; x++){
-                        let cel = document.getElementById(`${document.getElementById('rij').selectedIndex-1}${(document.getElementById('kolom').selectedIndex-1)+x}`);
-                        if(cel.children.length===1){
-                            controlegetal +="-"
+            if(document.getElementById('schepen').selectedIndex===0){
+                alert('maak uw keuze een schip');
+            }else{
+                let huidige_schips_foto = document.createElement('img');
+                huidige_schips_foto.src = `img/${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.afbeelding.value}`;
+                let huidige_schips_lengte = Number(`${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.lengte.value}`);
+                switch (0) {
+                    case document.getElementById('schepen').selectedIndex:
+                        toon_fout('kies een schip');
+                        break;
+                    case document.getElementById('rij').selectedIndex:
+                        toon_fout('kies een rij');
+                        break;
+                    case document.getElementById('kolom').selectedIndex:
+                        toon_fout('kies een kolom');
+                        break;
+                    default:
+                        toon_fout('');
+                        let gekozen_optie = document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)];
+                        let gekozen_schip_naam = gekozen_optie.attributes.naam.value;
+                        //console.log(gekozen_schip_naam);
+                        
+                        
+                        if(document.getElementById('horizontaal').checked === true){
+                            //controle horizontaal
+                            controle_horizontaal();  
                         }
-                        else if(cel.children.length===0){
-                            controlegetal +="+"  
-                        }        
-                    }
-                    //console.log(controlegetal);
-                    if(controlegetal.includes('-')){
-                        ongevalideerd();
-                    }
-                    else {
-                        gevalideerd_horizontaal()
-                    }
+                        if(document.getElementById('verticaal').checked === true){
+                            //append verticaal
+                            controle_verticaal();            
+                        }
+                        break;
                 }
-                
-            }
-            function controle_verticaal(){
-                if((document.getElementById('rij').selectedIndex+ huidige_schips_lengte)>11){
-                    toon_fout('boot is over de grens');
+                /*plaats() functies */
+                function controle_horizontaal(){
+                    if((document.getElementById('kolom').selectedIndex+ huidige_schips_lengte)>11){
+                        toon_fout('boot is over de grens');
+                    }
+                    else{
+                        let controlegetal = "";
+                        for(x=0; x<huidige_schips_lengte; x++){
+                            let cel = document.getElementById(`${document.getElementById('rij').selectedIndex-1}${(document.getElementById('kolom').selectedIndex-1)+x}`);
+                            if(cel.children.length===1){
+                                controlegetal +="-"
+                            }
+                            else if(cel.children.length===0){
+                                controlegetal +="+"  
+                            }        
+                        }
+                        //console.log(controlegetal);
+                        if(controlegetal.includes('-')){
+                            ongevalideerd();
+                        }
+                        else {
+                            gevalideerd_horizontaal()
+                        }
+                    }
+                    
                 }
-                else{
-                    let controlegetal = "";
+                function controle_verticaal(){
+                    if((document.getElementById('rij').selectedIndex+ huidige_schips_lengte)>11){
+                        toon_fout('boot is over de grens');
+                    }
+                    else{
+                        let controlegetal = "";
+                        for(x=0; x<huidige_schips_lengte; x++){
+                            let cel = document.getElementById(`${(document.getElementById('rij').selectedIndex-1)+x}${document.getElementById('kolom').selectedIndex-1}`);
+                            if(cel.children.length===1){
+                                controlegetal +="-";
+                            }
+                            else if(cel.children.length===0){
+                                controlegetal +="+";  
+                            }        
+                        }
+                        //console.log(controlegetal);
+                        if(controlegetal.includes('-')){
+                            ongevalideerd();
+                        }
+                        else {
+                            gevalideerd_verticaal();
+                        }
+                    }
+                    
+                }
+                function ongevalideerd(){
+                    toon_fout('cel is bezet');
+                }
+                function gevalideerd_horizontaal(){
+                    for(x=0; x<huidige_schips_lengte;x++){
+                        let cel_horizontaal = document.getElementById(`${document.getElementById('rij').selectedIndex-1}${(document.getElementById('kolom').selectedIndex-1)+x}`);
+                        let huidige_schips_foto = document.createElement('img');
+                        huidige_schips_foto.src = `img/${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.afbeelding.value}`;
+                        cel_horizontaal.append(huidige_schips_foto);
+                    }  
+                    localStorage.setItem(`opgeslagen_schip_${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.naam.value}`,
+                                        JSON.stringify(
+                                            [`img/${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.afbeelding.value}`,huidige_schips_lengte,"horizontaal",`${document.getElementById('rij').selectedIndex-1}`,`${document.getElementById('kolom').selectedIndex-1}`,`${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.naam.value}`]
+                                            )
+                    )
+                    document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].remove();
+                } 
+                function gevalideerd_verticaal(){
                     for(x=0; x<huidige_schips_lengte; x++){
                         let cel = document.getElementById(`${(document.getElementById('rij').selectedIndex-1)+x}${document.getElementById('kolom').selectedIndex-1}`);
-                        if(cel.children.length===1){
-                            controlegetal +="-";
-                        }
-                        else if(cel.children.length===0){
-                            controlegetal +="+";  
-                        }        
+                        let huidige_schips_foto = document.createElement('img');
+                        huidige_schips_foto.src = `img/${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.afbeelding.value}`;
+                        cel.append(huidige_schips_foto);
                     }
-                    //console.log(controlegetal);
-                    if(controlegetal.includes('-')){
-                        ongevalideerd();
-                    }
-                    else {
-                        gevalideerd_verticaal();
-                    }
+                    localStorage.setItem(`opgeslagen_schip_${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.naam.value}`,
+                                        JSON.stringify(
+                                            [`img/${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.afbeelding.value}`,huidige_schips_lengte,"verticaal",`${document.getElementById('rij').selectedIndex-1}`,`${document.getElementById('kolom').selectedIndex-1}`,`${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.naam.value}`]
+                                            )
+                    )
+                    document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].remove();
                 }
-                
             }
-            function ongevalideerd(){
-                toon_fout('cel is bezet');
-            }
-            function gevalideerd_horizontaal(){
-                for(x=0; x<huidige_schips_lengte;x++){
-                    let cel_horizontaal = document.getElementById(`${document.getElementById('rij').selectedIndex-1}${(document.getElementById('kolom').selectedIndex-1)+x}`);
-                    let huidige_schips_foto = document.createElement('img');
-                    huidige_schips_foto.src = `img/${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.afbeelding.value}`;
-                    cel_horizontaal.append(huidige_schips_foto);
-                }  
-                console.log(document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)]);
-                localStorage.setItem(`opgeslagen_schip_${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.naam.value}`,
-                                    JSON.stringify(
-                                        [`img/${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.afbeelding.value}`,huidige_schips_lengte,"horizontaal",`${document.getElementById('rij').selectedIndex-1}`,`${document.getElementById('kolom').selectedIndex-1}`,`${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.naam.value}`]
-                                        )
-                )
-                document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].remove();
-            } 
-            function gevalideerd_verticaal(){
-                for(x=0; x<huidige_schips_lengte; x++){
-                    let cel = document.getElementById(`${(document.getElementById('rij').selectedIndex-1)+x}${document.getElementById('kolom').selectedIndex-1}`);
-                    let huidige_schips_foto = document.createElement('img');
-                    huidige_schips_foto.src = `img/${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.afbeelding.value}`;
-                    cel.append(huidige_schips_foto);
-                }
-                localStorage.setItem(`opgeslagen_schip_${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.naam.value}`,
-                                    JSON.stringify(
-                                        [`img/${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.afbeelding.value}`,huidige_schips_lengte,"verticaal",`${document.getElementById('rij').selectedIndex-1}`,`${document.getElementById('kolom').selectedIndex-1}`,`${document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].attributes.naam.value}`]
-                                        )
-                )
-                document.getElementsByClassName('class_schepen')[(document.getElementById('schepen').selectedIndex)].remove();
-            }
+            
         })
             function toon_fout(text){
             document.getElementById('msg').innerText=text;
