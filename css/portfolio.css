@@ -157,8 +157,9 @@ body{
                         }    
                 .art_content{
                     width: 65%;
+                        text-align: center;
                         opacity: .75;
-                }    
+                }  
     /*************************************FOOTER*******************************/
     
         .footer_wrapper{
