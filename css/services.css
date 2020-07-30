@@ -110,6 +110,7 @@ body{
         .navitem a{
             font-size: 1.05rem;
             align-self: center;
+            text-align: center;
             color: rgb(243, 243, 243);
         }
         .nav_active{
