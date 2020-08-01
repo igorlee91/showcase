@@ -167,6 +167,13 @@ body{
                             margin-top: .3rem;
                                 font-family: 'Trirong', serif;
                         }
+                        .content__content_offer{
+                            padding: 0;
+                        }
+                        .content_content_offer li{
+                            
+                        }
+
     /*************************************FOOTER*******************************/
     footer{
         background: url(/css/img/bg_mobile.png);
