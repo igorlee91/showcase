@@ -57,7 +57,7 @@ body{
         display: grid;
         grid-template-columns: 5% 30% 18%;
             background-image: linear-gradient(to right,#f9f9f9,rgba(193, 201, 201, 0.411),rgba(180, 194, 185, 0.349));
-            opacity: .35;
+            opacity: .9;
     }
         .decoration_bars{
             height: 70px;
@@ -88,11 +88,20 @@ body{
         }
         .divhomeicon{
             display: grid;
+            justify-self: end;
         }
         #homebuttonimage{
             min-width: 75px;
             align-self: center;
             justify-self: center;
+            display: grid;
+
+        }
+        #homebuttonimage img{
+            height: 30px;
+            align-self: center;
+            justify-self: center;
+
         }
     /*****************************************NAV******************************/
     nav{
@@ -102,7 +111,7 @@ body{
         justify-content: space-evenly;
         margin-top: 1rem;
             background: rgba(104, 104, 104, 0.486);
-            opacity: .7;
+            opacity: .98;
             
     }  
         .navitem{

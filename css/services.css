@@ -102,7 +102,7 @@ body{
         margin-top: 1rem;
             border-radius: 3rem;
             background: rgba(104, 104, 104, 0.486);
-            opacity: .7;
+            opacity: .82;
     }  
         .navitem{
             display: grid; 
@@ -288,9 +288,6 @@ body{
                     font-size: 18px;
                     line-height: 22px;
                 }
-        main{
-
-        }   
             .container_image{
                 width: 40%;
                 border: 2px solid rgba(224, 224, 224, 0.596);
