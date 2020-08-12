@@ -348,11 +348,8 @@
                             <div class="art-label">
                                 <label for="name-recipe" id=label-recipe-id>Name:</label>
                                 <label for="info-recipe" id=recipe-info-id>Info:</label>
-                                <div class="uploadfile">
-                                    <label for="img">Select image:</label>
-                                    <input type="file" id="img" name="img" accept="image/*">
-                                    <input type="submit">
-                                </div>
+                                <input type='file' />
+                                <br><img id="myImg" src="#" alt="your image" height=200 width=100>
                                 <div class="submitbutton">
                                     <button id="submitbutton-id">Submit</button>
                                 </div> 
@@ -397,7 +394,18 @@
 </body>
 <script>
 window.onload=function(){
-    
+    document.querySelector('input[type="file"]').addEventListener('change', function() {
+      if (this.files && this.files[0]) {
+          var img = document.querySelector('img');  // $('img')[0]
+          img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+          img.onload = imageIsLoaded;
+      }
+  });
+
+    function imageIsLoaded() { 
+    console:log(this.src);  // blob url
+    // update width and height ...
+}
     for(let x=0; x<localStorage.length; x++)
         {
             if(localStorage.key(x).includes("recipes"))
