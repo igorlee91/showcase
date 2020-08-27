@@ -17,10 +17,9 @@
     text-decoration: underline;
 }
     .navitem a{
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: normal;
-        line-height: 29px;
+        font-family: 'Philosopher', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
         filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.767));
     }    
 .art_title p{
@@ -43,66 +42,32 @@
 /***************************BODY***************************************/    
 body{
     margin: 0;
+    display: grid;
+    min-height: 100vh;
 }
 /****************************WRAPPER***********************************/
 .wrapper{
     display: grid;
-        background: linear-gradient(#b6b6b62a,#f9f9f9);
         background-image: url(/css/img/bg_mobile.png);
+        background-size:cover;
 }
     /************************HEADER**************************************/
     header{
-        height: 96px;
-        display: grid;
-        grid-template-columns: 5% 30% 18%;
-            background-image: linear-gradient(to right,#f9f9f9,rgba(193, 201, 201, 0.411),rgba(180, 194, 185, 0.349));
-            opacity: .9;
+        display: none;
     }
-        .decoration_bars{
-            height: 70px;
-            align-self: center;
-            border-left: 3px double;
-            margin-left: 1rem;
-        }
-        .langbar{
-            height: 70px;
-            align-self: center;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-left: 1rem;
-        }
-        .langbar .langitem{
-            margin-right: .89rem;
-        }
-        .homebutton{
-            min-width: 92px;
-            width: 15%;
-            height: 96px;
-            
-            position: absolute;
-            right: 1rem;
-            
-            display: grid;
-        }
-        .divhomeicon{
-            display: grid;
-        }
-        #homebuttonimage{
-            min-width: 75px;
-            align-self: center;
-            justify-self: center;
-        }
+        
     /*****************************************NAV******************************/
     nav{
+        width: 80%;
+        justify-self: center;
+        height: 65px;
         display: flex;
         align-items: center;
         justify-items: center;
         justify-content: space-evenly;
         margin-top: 1rem;
-            border-radius: 3rem;
-            background: rgba(104, 104, 104, 0.486);
-            opacity: .98;
+        background:rgb(0, 0, 0, 0.671);
+        opacity: .85;
     }  
         .navitem{
             display: grid; 
@@ -143,9 +108,6 @@ body{
                     .container_image img{
                         width: 100%;
                     }
-                .container_content{
-   
-                }    
                     .content_title{
                         display: flex;
                         justify-content: center;
@@ -164,11 +126,10 @@ body{
                     }
                         .content_content>*{
                             margin-top: .3rem;
-                                font-family: 'Trirong', serif;
                         }
     /*************************************FOOTER*******************************/
     footer{
-        background: url(/css/img/bg_mobile.png);
+        align-self: end;
     }
         .footer_wrapper{
             min-height: 92px;
@@ -178,57 +139,25 @@ body{
                 background: rgba(190, 190, 190, 0.2);
                 opacity: 0.55;      
         }
-            .langbar_footer{
-                display: none;
-            }    
-            .navlogos{
-                align-self: center;
-                justify-self: center;
-                height: 55%;
-                width: 50%;
-                display: flex;
-                justify-content: space-around;
-            }
-            .logoitem{
-                width: 50px;
-                height: 100%
-            }
-            #logo_instagram, #logo_linkedin, #logo_fb{
-                width: 100%;
-                height: 100%;
+        .langbar_footer{
+            margin-left: 1rem;
+            display: flex;
+            opacity: .55;
+        }
+        .langitem_footer{
+            margin: 1ch;
         }
     /*-------------------------------------  < 288px  ----------------------------------------*/
     @media (max-width: 288px){
             /*--------------------------------------HEADER------------------------------------*/
             header{
-                display: flex;
-                flex-direction: column;
-                    align-items: center;
-                    padding: .75rem;
-                    margin-bottom: 2rem;
-            }
-            .homebutton{
-                position: relative;
-                right: 0;
-                order: 1;
-            }
-            .langbar{
-                margin-left: 0;
-                order: 2;
-                width: 100%;
-                display: flex;
-            }
-            #lang_en{
-                margin-right: 0;
-            }
-            .decoration_bars{
                 display: none;
             }
             /*-----------------------------------NAV------------------------------------------*/
             nav{
                 margin-left: 0;
             } 
-            /*-----------------------------------MAIN------------------------------------------*/
+            /*-----------------------------------MAIN-----------------------------------------*/
             .articlebox{
                 flex-direction: column;
                 align-items: center;
@@ -237,40 +166,48 @@ body{
                 width: 85%;
             }
             /**********************************FOOTER***********************************************/
-            .navlogos{
-                width: 95%;
-            }
+            .langbar_footer{
+                justify-content: space-evenly;
+            } 
     }
     /*-------------------------------------  > 600px  ----------------------------------------*/
     @media (min-width: 600px){
-    .wrapper{
-        background-image: url(/css/img/bg_desktop.jpg);
-    }    
+        .wrapper{
+            background-image: url(/css/img/bg_desktop.jpg);
+        }    
+        /*--------------------------------------HEADER------------------------------------*/
         header{
             display: flex;
             justify-content: flex-end;
             height: 37px;
-                background: rgb(231, 231, 231);
-                opacity: .35;
+            background: rgb(231, 231, 231);
+            opacity: .35;
         }
-            .decoration_bars,.homebutton{
-                display: none;
+            .langbar{
+                height: 70px;
+                align-self: center;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-left: 1rem;
             }
                 .langbar a:hover{
                     color: rgb(138, 138, 138);
                 }
-                    .langitem{
-                        font-family: Tajawal;
+                .langbar .langitem{
+                    margin-right: .89rem;
+                    font-family: Tajawal;
                         font-weight: 900;
                         font-size: 14px;
                         line-height: 17px;
                         mix-blend-mode: normal;
                         text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-                    }
+                }
+        /*-----------------------------------NAV------------------------------------------*/
         nav{
             height: 104px;
             margin-top: 0;
-                opacity: .55;
+            width:100%
         }   
             .navitem{
                 height: 40px;
@@ -279,45 +216,46 @@ body{
                     font-size: 18px;
                     line-height: 22px;
                 }  
+        /*-----------------------------------MAIN-----------------------------------------*/
             .container_image{
                 width: 40%;
+                max-width: 30%;
                 border: 2px solid rgba(224, 224, 224, 0.596);
                 background-color: rgba(184, 184, 184, 0.247);
-                    opacity: .95;
+                opacity: .95;
             }
             .container_content{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                    background: rgba(247, 247, 247, 0.13);
-                        opacity: .75;
+                background: rgba(247, 247, 247, 0.13);
+                opacity: .75;
             }  
                 .content_content{
                     width: 50%;
                 }  
+        /*------------------------------------FOOTER------------------------------------*/
         .footer_wrapper{
         min-height: 92px;
         align-self: end;
         display: grid;
-        /*
-        grid-template-columns: 0.2fr 1fr;
-        */
         }
-            .langbar_footer{
-                    display: flex;
+                .langitem_footer{
                     max-width: 76px;
                     margin-left: 1rem;
-                    justify-content: space-around;
-            }
-                .langitem_footer{
-                    width: 25px;
-                    font-family: Tajawal;
-                    font-style: normal;
-                    font-weight: normal;
-                    font-size: 14px;
-                    line-height: 17px;
-                    mix-blend-mode: normal;
-                        opacity: 0.55;
-                        color: #1C1111;
+                    align-self: center;
                 }           
     }
+
+/*-------------------------------------  > 1200px  ----------------------------------------*/
+@media(min-width:1200px){
+    /*-----------------------------------BODY-----------------------------------------*/
+    body{
+        padding: 0 10% 0 10%;
+    }
+    /*-----------------------------------MAIN-----------------------------------------*/
+    .container_image{
+        max-width: 25%;
+    }
+}
+    
