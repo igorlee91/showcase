@@ -278,10 +278,7 @@ body{
                 .navitem a{
                     font-size: 18px;
                     line-height: 22px;
-                }
-        main{
-
-        }   
+                }  
             .container_image{
                 width: 40%;
                 border: 2px solid rgba(224, 224, 224, 0.596);
@@ -311,8 +308,6 @@ body{
                     max-width: 76px;
                     margin-left: 1rem;
                     justify-content: space-around;
-                    position: relative;
-                    top: -48%;
             }
                 .langitem_footer{
                     width: 25px;

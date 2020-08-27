@@ -43,6 +43,8 @@
 /***************************BODY***************************************/    
 body{
     margin: 0;
+    display: grid;
+    min-height: 100vh;
 }
 /****************************WRAPPER***********************************/
 .wrapper{
@@ -50,14 +52,16 @@ body{
         background: linear-gradient(#b6b6b62a,#f9f9f9);
         background-image: url(/css/img/bg_mobile.png);
         background-size: cover;
+
 }
     /************************HEADER**************************************/
     header{
         height: 96px;
         display: grid;
         grid-template-columns: 5% 30% 18%;
-            background-image: linear-gradient(to right,#f9f9f9,rgba(193, 201, 201, 0.411),rgba(180, 194, 185, 0.349));
-            opacity: .9;
+        background-image: linear-gradient(to right,#f9f9f9,rgba(193, 201, 201, 0.411),rgba(180, 194, 185, 0.349));
+        opacity: .9;
+        display: none;
     }
         .decoration_bars{
             height: 70px;
@@ -170,7 +174,9 @@ body{
                         opacity: .75;
                 }  
     /*************************************FOOTER*******************************/
-    
+    footer{
+        align-self: end;
+    }
         .footer_wrapper{
             min-height: 92px;
             align-self: end;
@@ -202,11 +208,14 @@ body{
     @media (max-width: 288px){
             /*--------------------------------------HEADER------------------------------------*/
             header{
+                display: none;
+                /*
                 display: flex;
                 flex-direction: column;
-                    align-items: center;
-                    padding: .75rem;
-                    margin-bottom: 2rem;
+                align-items: center;
+                padding: .75rem;
+                margin-bottom: 2rem;
+                */
             }
             .homebutton{
                 position: relative;
@@ -316,8 +325,7 @@ body{
                     max-width: 76px;
                     margin-left: 1rem;
                     justify-content: space-around;
-                    position: relative;
-                    top: -48%;
+                    
             }
                 .langitem_footer{
                     width: 25px;
@@ -327,7 +335,6 @@ body{
                     font-size: 14px;
                     line-height: 17px;
                     mix-blend-mode: normal;
-
                         opacity: 0.55;
                         color: #1C1111;
                 }           
