@@ -16,7 +16,7 @@
 .langbar .active_link, .langbar a:hover,.langbar_footer .active_link, .langbar_footer a:hover{
     text-decoration: underline;
 }
-    .navitem a{
+    .navitem {
         font-family: 'Philosopher', sans-serif;
         font-style: normal;
         font-weight: normal;
@@ -43,15 +43,11 @@
 /***************************BODY***************************************/    
 body{
     margin: 0;
-    display: grid;
-    min-height: 100vh;
-}
-/****************************WRAPPER***********************************/
-.wrapper{
-    display: grid;
-        background-image: url(/css/img/bg_mobile.png);
-        background-size: cover;
-
+    height: 100vh;
+    background-image: url(/css/img/bg_mobile.png);
+    background-size: cover;
+    /*display: grid;
+    height: 100vh;*/
 }
     /************************HEADER**************************************/
     header{
@@ -84,16 +80,29 @@ body{
         .nav_inactive{
             border-bottom: .1rem solid rgba(255, 255, 255, 0);
         }
+        #port-nav,#over-nav{
+            cursor: pointer;
+        }
     /*************************************MAIN**********************************/
     main{
-        padding: 1rem; 
-            border-bottom: 4px solid rgb(0, 0, 0, 0.671);
-            border-radius: 2%;
+        display: grid;
+        grid-template-columns: 100% 100%;
+        justify-items: center;
+    }
+    .main_port{
+        min-height:100vh;
+        width: 100%;
+        display: grid;
+        justify-self: center;
     }
         .container_articles{
+            width: 60%;
             display: grid;
             grid-template-rows: repeat(auto-fit);
             grid-row-gap: .3rem;
+            border-bottom: 4px solid rgb(0, 0, 0, 0.671);
+            border-radius: 2%;
+            padding: 1rem;
         }
             .articlebox{
                 display: flex;
@@ -124,7 +133,84 @@ body{
                     width: 65%;
                         text-align: center;
                         opacity: .75;
-                }  
+                } 
+    .main_over{
+        min-height: 50vh;
+        width: 100%;
+        justify-self: center;
+        background-image: url(/css/img/bg_mobile.png); 
+        display: grid;
+    }
+        .container_main_content{
+            width: 60%;
+            justify-self: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1rem;
+            border-bottom: 4px solid rgb(0, 0, 0, 0.671);
+            border-radius: 2%;
+            opacity: .85;         
+        }
+            .container_main_content>*{
+                width: 80%;
+            }  
+                .container_image{
+                    display: flex;
+                    justify-content: center;
+                }
+                    .container_image img{
+                        width: 80%;
+                    }
+                .content_title{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    min-height: 50px;
+                    text-align: center;
+                }    
+                .content_content{
+                    margin-bottom: .1rem;
+                    padding: 0.5rem;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;           
+                }
+                    .content_content>*{
+                        margin-top: .3rem;
+                    } 
+/*******************************************ANIMATION*********************************************/
+                .undisplayed{
+                    display: none;
+                }
+                .displayed{
+                    display: grid;
+                }                 
+                .transform {
+                    -webkit-transition: all 2s ease;  
+                    -moz-transition: all 2s ease;  
+                    -o-transition: all 2s ease;  
+                    -ms-transition: all 2s ease;  
+                    transition: all 2s ease;
+                }
+                .center_toleft {
+                    background-color: #45CEE0;
+                    margin-left:-200%;
+                }
+                .left_tocenter{
+                    margin-left:0;
+                }
+                .right_tocenter{
+                    margin-right: 200%;
+                }
+                .center_toright{
+                    margin-right: 0;
+                }
+                .active_nav{
+                    border-bottom: 4px solid black
+                }
     /*************************************FOOTER*******************************/
     footer{
         align-self: end;
@@ -258,7 +344,10 @@ body{
             padding: 0 10% 0 10%;
         }
         /*-----------------------------------MAIN-----------------------------------------*/
-        .container_image{
-            max-width: 25%;
+        .container_image {
+            max-width: 85%;
         }
+            .container_img img{
+                width:100%
+            }
     }

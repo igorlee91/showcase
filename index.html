@@ -7,14 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap" rel="stylesheet">
     <link href="/css/fonts/Tajawal/Tajawal-Regular.ttf" rel="stylesheet">
     <link href="/css/fonts/Trirong/Trirong-Medium.ttf" rel="stylesheet">
-    <link href="/css/portfolio.css" rel="stylesheet">
-    <script src="/js/portfolio.js" defer></script>
-
+    <link href="/css/index.css" rel="stylesheet">
+    <script src="/js/index.js" defer></script>
 </head>
 <body>
-    <div class="wrapper">
         <header>
-            <div class="decoration_bars"></div>
             <div class="langbar">
                 <a href="/index.html" class="active_link"><div class="langitem" id="lang_nl">NL</div></a>
                 <a href="/portfolio_fr.html"><div class="langitem" id="lang_fr">FR</div></a>
@@ -22,34 +19,65 @@
             </div>
         </header>
         <nav>
-            <div class="navitem nav_active" id="portfolio-id"><a href="index.html">Portfolio</a></div>
-            <div class="navitem nav_inactive"><a href="about_nl.html">Over mij</a></div>
+            <div class="navitem nav_active" id="port-nav">Portfolio</div>
+            <div class="navitem nav_inactive" id="over-nav">Over mij<a href="about_nl.html"></a></div>
         </nav>
         <main>
-            <div class="container_articles">
-                <article id="cooking-book-id" class="articlebox">
-                    <div class="art_title">
-                        <a href="/Innas_cooking_book/index.html" target="_blank"><p>Inna's Cooking Book</p></a> 
+            <main class="main_port transform" id="main-port">
+                <div class="container_articles">
+                    <article id="cooking-book-id" class="articlebox">
+                        <div class="art_title">
+                            <a href="/Innas_cooking_book/index.html" target="_blank"><p>Inna's Cooking Book</p></a> 
+                        </div>
+                        <div class="art_content">
+                            <p>
+                                De 'Cooking Book' biedt de mogelijkheid om recepten op te slaan en te wijzigen indien het nodig is.
+                            </p>
+                        </div>   
+                    </article>
+                    <article id="zeeslag-id" class="articlebox">
+                        <div class="art_title">
+                            <a href="/zeeslag/JS_PF_zeeslag.html" target="_blank"><P>Zeeslag</P></a>
+                        </div>
+                        <div class="art_content">
+                            <p>
+                                Zeeslag is een spel geschreven in Javascript. 
+                                U kunt eerst kiezen uit vijf boten, daarna kunnen de boten geplaatst worden.
+                                Er zal een foutmelding verschijnen indien de door u gekozen plaats bezet is.
+                            </p>
+                        </div> 
+                    </article>
+                </div>
+            </main>
+            <main class="main_over transform undisplayed" id="main-over">
+                <div class="container_main_content">
+                    <div class="container_image">
+                        <img src="/css/img/me.jpg">
                     </div>
-                    <div class="art_content">
-                        <p>
-                            De 'Cooking Book' biedt de mogelijkheid om recepten op te slaan en te wijzigen indien het nodig is.
-                        </p>
-                    </div>   
-                </article>
-                <article id="zeeslag-id" class="articlebox">
-                    <div class="art_title">
-                        <a href="/zeeslag/JS_PF_zeeslag.html" target="_blank"><P>Zeeslag</P></a>
-                    </div>
-                    <div class="art_content">
-                        <p>
-                            Zeeslag is een spel geschreven in Javascript. 
-                            U kunt eerst kiezen uit vijf boten, daarna kunnen de boten geplaatst worden.
-                            Er zal een foutmelding verschijnen indien de door u gekozen plaats bezet is.
-                        </p>
-                    </div> 
-                </article>
-            </div>
+                    <div class="container_content">
+                        <div class="content_title">
+                            <h2>WIE BEN IK?</h2>
+                        </div>
+                        <div class="content_content">
+                            <p>
+                                Na een loopbaan in diverse sectoren, heb ik mijzelf eindelijk teruggevonden in web ontwikkeling. 
+                            </p>
+                            <p>
+                                In november 2019 ging mijn opleiding voor PHP ontwikkelaar van start bij de VDAB (campus gelegen in Wevelgem). 
+                                Ik heb op dit moment een goede basiskennis van HTML/CSS, alsook Javascript en ik blijf constant doorgroeien. 
+                            </p>     
+                        </div>
+                        <div class="content_title">
+                            <h2>WAT KUNT U VERWACHTEN?</h2>
+                        </div>
+                        <div class="content_content">
+                            <p>
+                                Naarmate mijn kunnen doe ik er alles aan om uw project binnen de afgesproken deadline te realiseren.
+                            </p>   
+                        </div>
+                    </div>  
+                </div>
+            </main>
         </main>
         <footer>
             <div class="footer_wrapper">
@@ -60,6 +88,5 @@
                 </div>
             </div>
         </footer>   
-    </div>
 </body>
 </html>
