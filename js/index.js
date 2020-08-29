@@ -39,11 +39,11 @@ window.onload=function(){
     function nav_hover(){
         for(x of document.getElementsByClassName('navitem')){
             x.addEventListener('mouseover',function(){
-                this.className = "navitem nav_active";
+                this.className = "transform_fast navitem nav_active";
             })
             x.addEventListener('mouseout',function(){
                 if(this.id !== "portfolio-id"){
-                    this.className = "navitem nav_inactive";
+                    this.className = "transform_fast navitem nav_inactive";
                 }
             })
         }
