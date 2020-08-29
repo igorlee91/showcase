@@ -13,7 +13,7 @@
     text-decoration: none;
     color: black;
 }
-.langbar .active_link, .langbar a:hover,.langbar_footer .active_link, .langbar_footer a:hover{
+.langbar,.langbar a:hover,.langbar_footer, .langbar_footer a:hover{
     text-decoration: underline;
 }
     .navitem {
@@ -66,17 +66,16 @@ body{
     }  
         .navitem{
             display: grid; 
+            height: 30px;
         } 
-        .navitem a{
-            font-size: 1.05rem;
-            align-self: center;
-            color: rgb(243, 243, 243);
+        .navitem:hover{
+            color: tomato;
         }
         .nav_active{
-            border-bottom: .1rem solid rgb(235, 235, 235);
+            color: tomato;
+            border-bottom: 1px solid rgba(255, 85, 0, 0.267);
         }
         .nav_inactive{
-            border-bottom: .1rem solid rgba(255, 255, 255, 0);
         }
         #port-nav,#over-nav{
             cursor: pointer;
@@ -213,9 +212,7 @@ body{
                 .center_toright{
                     margin-right: 0;
                 }
-                .active_nav{
-                    border-bottom: 4px solid black
-                }
+                
     /*************************************FOOTER*******************************/
     footer{
         align-self: end;
@@ -253,10 +250,9 @@ body{
                 display: none;
             }
             /*-----------------------------------NAV------------------------------------------*/
-            nav{
-                margin-left: 0;
-            } 
+            
             /*-----------------------------------MAIN------------------------------------------*/
+            /*main_port*/
             .articlebox{
                 flex-direction: column;
                 align-items: center;
@@ -320,10 +316,7 @@ body{
             .navitem{
                 height: 40px;
             }
-                .navitem a{
-                    font-size: 18px;
-                    line-height: 22px;
-                } 
+                
         /*-----------------------------------MAIN-----------------------------------------*/
         main{
             /*border: 1px solid;*/
