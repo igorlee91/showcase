@@ -3,8 +3,9 @@ window.onload=function(){
     document.querySelector("#port-nav").onclick = getPortfolio
     nav_hover();
     function getOver(){
+        nav_hover();
         document.querySelector("#over-nav").className="transform active_nav"
-        document.querySelector("#port-nav").className="transform"
+        document.querySelector("#port-nav").className="transform navitem nav_inactive"
             setTimeout(() => {
                 document.getElementsByClassName("main_over")[0].className = "main_over transform displayed"
             }, 0);
@@ -17,8 +18,9 @@ window.onload=function(){
             }, 50);
     }
     function getPortfolio(){
+        nav_hover();
         document.querySelector("#port-nav").className="transform active_nav"
-        document.querySelector("#over-nav").className="transform"
+        document.querySelector("#over-nav").className="transform navitem nav_inactive"
         setTimeout(() => {
             document.getElementsByClassName("main_over")[0].className = "main_over transform"
         }, 50);
