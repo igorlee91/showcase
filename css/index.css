@@ -121,8 +121,7 @@ body{
                                 border-radius: 20%;
                                 color: rgba(252, 1, 1, 0.815);
                                 background: #f9f9f9;
-                                    opacity: .85;
-                                      
+                                    opacity: .85;         
                             }
                         .art_title p:hover{
                             text-decoration: underline;
@@ -157,6 +156,7 @@ body{
                 .container_image{
                     display: flex;
                     justify-content: center;
+                    width: 100%;
                 }
                     .container_image img{
                         width: 80%;
@@ -187,10 +187,11 @@ body{
                     display: grid;
                 }                 
                 .transform {
-                    -webkit-transition: all 2s ease;  
+                   /*
+                    -webkit-transition: all 2s ease;   
                     -moz-transition: all 2s ease;  
                     -o-transition: all 2s ease;  
-                    -ms-transition: all 2s ease;  
+                    -ms-transition: all 2s ease; */
                     transition: all 2s ease;
                 }
                 .center_toleft {
@@ -260,6 +261,13 @@ body{
             .art_title, .art_content{
                 width: 85%;
             }
+            /*main_over*/
+            .container_main_content{
+                width:80%
+            }
+            .container_main_content>*{
+                width: 100%;
+            }
             /**********************************FOOTER***********************************************/
             .langbar_footer{
                 justify-content: space-evenly;
@@ -319,7 +327,7 @@ body{
             background: rgba(255, 255, 255, 0.295);
             opacity: .85;
         }
-
+        /*main_port*/
             .articlebox{
                 flex-direction: column;
                         
@@ -334,6 +342,8 @@ body{
                         text-align: center;
                         font-size: 1.18rem;
                     }
+            /*main_over*/
+
         /*------------------------------------FOOTER------------------------------------*/
         .footer_wrapper{
         min-height: 92px;
