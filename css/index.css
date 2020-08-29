@@ -216,21 +216,30 @@ body{
         align-self: end;
     }
         .footer_wrapper{
+            /*border: 1px solid tomato;*/
             min-height: 92px;
             align-self: end;
-            display: grid;
-            align-items: center;
+            display: flex;
+
+            align-content: center;
                 background: rgba(190, 190, 190, 0.2);
                 opacity: 0.55;      
         }
             .langbar_footer{
                 display: flex;
                 opacity: .5;
+                background:rgba(238, 233, 220, 0.178);
+                color: ivory;
+                /*border: 1px solid tomato*/
             }
             .langitem_footer{
                 margin: 1ch;
             }  
-            
+            .msgbar_footer{
+                /*border: 1px solid tomato;*/
+                justify-self:center;
+                font-family: "Abril Fatface", cursive;
+            }
 
     /*-------------------------------------  < 288px  ----------------------------------------*/
     @media (max-width: 288px){
