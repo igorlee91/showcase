@@ -4,7 +4,7 @@ window.onload=function(){
     nav_hover();
     function getOver(){
         nav_hover();
-        document.querySelector("#over-nav").className="transform active_nav"
+        document.querySelector("#over-nav").className="transform active_nav nav_active"
         document.querySelector("#port-nav").className="transform navitem nav_inactive"
             setTimeout(() => {
                 document.getElementsByClassName("main_over")[0].className = "main_over transform displayed"
@@ -19,7 +19,7 @@ window.onload=function(){
     }
     function getPortfolio(){
         nav_hover();
-        document.querySelector("#port-nav").className="transform active_nav"
+        document.querySelector("#port-nav").className="transform active_nav nav_active"
         document.querySelector("#over-nav").className="transform navitem nav_inactive"
         setTimeout(() => {
             document.getElementsByClassName("main_over")[0].className = "main_over transform"
