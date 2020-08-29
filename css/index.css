@@ -46,8 +46,6 @@ body{
     height: 100vh;
     background-image: url(/css/img/bg_mobile.png);
     background-size: cover;
-    /*display: grid;
-    height: 100vh;*/
 }
     /************************HEADER**************************************/
     header{
@@ -55,7 +53,7 @@ body{
     }
     /*****************************************NAV******************************/
     nav{
-        width: 80%;
+        width: 100%;
         justify-self: center;
         height: 65px;
         display: flex;
