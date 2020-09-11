@@ -29,8 +29,8 @@ window.onload=function(){
                 document.getElementsByClassName("main_over")[0].className = "main_over transform undisplayed"
                 clearInterval(interval)
             }
-            console.log(window.getComputedStyle(document.getElementsByClassName("main_over")[0], null).getPropertyValue("margin-right"))
+            //console.log(window.getComputedStyle(document.getElementsByClassName("main_over")[0], null).getPropertyValue("margin-right"))
         }, 200);
-        
     }   
+    
 }

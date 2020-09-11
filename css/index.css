@@ -1,4 +1,6 @@
-/*******************CSS portfolio_nl.html,portfolio_fr.html,portfolio_en.hmtl*/
+/*******************CSS index.css*/
+/*reset css*/
+/*end reset css*/
 /*typography*/
 .langitem{
     font-family: Tajawal;
@@ -98,12 +100,25 @@ body{
             display: grid;
             grid-template-rows: repeat(auto-fit);
             grid-row-gap: .3rem;
-            /*
-            border-bottom: 4px solid rgb(0, 0, 0, 0.671);
-            border-radius: 2%;
-        */
             padding: 1rem;
         }
+            #cooking-book-id,#zeeslag-id{
+                background-size: cover;
+                background-repeat: no-repeat;
+                cursor: pointer;
+                box-sizing: border-box;
+                transition: all 1s ease-in-out;
+            }
+            #cooking-book-id:hover,#zeeslag-id:hover,#cooking-book-id:hover,#zeeslag-id:focus{
+                outline: .5px solid rgba(255, 99, 71, 0.493);
+                opacity:.95;
+            }
+            #cooking-book-id{
+                background-image: url(img/bg3.jpg);
+            }
+            #zeeslag-id{
+                background-image: url(img/sea.jpg);
+            }
             .articlebox{
                 display: flex;
                 flex-direction: column;
@@ -132,7 +147,8 @@ body{
                     width: 65%;
                         text-align: center;
                         opacity: .75;
-                } 
+                }
+                 
     .main_over{
         min-height: 50vh;
         width: 100%;
@@ -181,7 +197,7 @@ body{
                     .content_content>*{
                         margin-top: .3rem;
                     } 
-/*******************************************ANIMATION*********************************************/
+/*******************************************ANIMATION MAIN*********************************************/
                 .undisplayed{
                     display: none;
                 }

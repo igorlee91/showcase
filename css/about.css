@@ -1,4 +1,4 @@
-/*******************CSS portfolio_nl.html,portfolio_fr.html,portfolio_en.hmtl*/
+/*******************CSS about.css*/
 /*typography*/
 .langitem{
     font-family: Tajawal;
@@ -154,9 +154,7 @@ body{
                 display: none;
             }
             /*-----------------------------------NAV------------------------------------------*/
-            nav{
-                margin-left: 0;
-            } 
+
             /*-----------------------------------MAIN-----------------------------------------*/
             .articlebox{
                 flex-direction: column;
