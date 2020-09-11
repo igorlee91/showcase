@@ -1,6 +1,8 @@
 window.onload=function(){
     document.querySelector("#over-nav").onclick = getOver
+    document.querySelector("#arrow-getover").onclick = getOver
     document.querySelector("#port-nav").onclick = getPortfolio
+    document.querySelector("#arrow-getport").onclick = getPortfolio
     function getOver(){
         document.querySelector("#over-nav").className="transform navitem nav_active"
         document.querySelector("#port-nav").className="transform navitem nav_inactive"
