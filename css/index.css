@@ -110,7 +110,7 @@ body{
                 transition: all 1s ease-in-out;
             }
             #cooking-book-id:hover,#zeeslag-id:hover,#cooking-book-id:hover,#zeeslag-id:focus{
-                outline: .5px solid gold;
+                outline: .5px solid rgba(56, 56, 56, 0.295);
                 opacity:.95;
             }
             #cooking-book-id{
