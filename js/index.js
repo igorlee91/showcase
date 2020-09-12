@@ -34,5 +34,4 @@ window.onload=function(){
             //console.log(window.getComputedStyle(document.getElementsByClassName("main_over")[0], null).getPropertyValue("margin-right"))
         }, 200);
     }   
-    
 }

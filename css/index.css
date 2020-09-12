@@ -185,6 +185,7 @@ body{
                 max-width: 70%;
                 justify-self: center;
                 align-self: center;
+                transition: all 2s ease;
             }
         .arrow:hover{
             opacity: 1;
@@ -422,9 +423,12 @@ body{
     @media(min-width:1200px){
         /*-----------------------------------BODY-----------------------------------------*/
         body{
-            padding: 0 5rem;
+            padding: 0 5%;
         }
         /*-----------------------------------MAIN-----------------------------------------*/
+        main{
+            grid-template-columns: 105% 105%;
+        }
         /*main_over*/
 
         .container_image img,.container_content{
