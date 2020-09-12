@@ -35,3 +35,47 @@ window.onload=function(){
         }, 200);
     }   
 }
+class Navigationbar{
+    constructor(navModel,navView){
+        this.navModel = navModel
+        this.navView = navView
+        //
+    }
+}
+class NavigationModel{
+    
+}
+class NavigationView{
+    constructor(){
+        this.portoflio_=document.getElementById("port-nav")
+        this.about_=document.getElementById("over-nav")
+        this.nav=document.querySelector("nav").children
+        this.linkHover(this.portoflio_)
+        this.linkHover(this.about_)
+    }
+    linkHover(link){
+        link.addEventListener("mouseover",event=>{
+            if (event.target.className=="transform navitem nav_inactive") {
+                event.target.classList.add("nav_active")
+                for (const x of this.nav) {
+                    if (x!==event.target) {
+                        x.classList="transform navitem nav_inactive"
+                    }
+                }
+            }
+        })
+        link.addEventListener("mouseout",event=>{
+            if (event.target.className=="transform navitem nav_inactive nav_active") {
+                event.target.classList.remove("nav_active")
+                for (const x of this.nav) {
+                    if (x!==event.target) {
+                        x.classList="transform navitem nav_active"
+                    }
+                }
+            }   
+        })
+    }
+
+}
+const n = new Navigationbar(new NavigationModel,new NavigationView)
+console.log(n);

@@ -25,9 +25,6 @@
         line-height: 29px;
         filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.767));
     }  
-    .navitem:hover{
-        color:white;
-    }  
 .art_title p{
     font-weight: 600;
     font-family: 'Trirong', serif;
