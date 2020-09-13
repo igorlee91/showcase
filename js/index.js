@@ -18,8 +18,6 @@ window.onload=function(){
             this.mainport=document.getElementById("main-port")
             this.mainover=document.getElementById("main-over")
             //
-            this.arrowCheck()
-            //
             this.linkHover(this.navport)
             this.linkHover(this.navover)
             //
@@ -41,7 +39,6 @@ window.onload=function(){
                                 console.log(this.rightarrow);
             })
         }
-        
         linkHover(link){
             link.addEventListener("mouseover",event=>{
                 if (event.target.className=="transform navitem nav_inactive") {
@@ -70,49 +67,25 @@ window.onload=function(){
                     this.navover.className="transform navitem nav_active"
                     this.navport.className="transform navitem nav_inactive"
                 }
-                this.mainover.classList.add("displayed")
                 this.mainport.classList.add("margin-leftminus")
+                this.rightarrowimage.style.opacity="0.1"
+                this.leftarrowimage.style.opacity="1"
                 setTimeout(() => {
                     this.mainover.classList.add("margin-rightplus")
                 }, 50);
-                if (window.matchMedia("(min-width:1200px)").matches) {
-                    this.rightarrow.style.display="none"
-                    this.leftarrow.style.display="grid"
-                    this.mainport.append(this.leftarrow)
-                    this.mainover.style.gridTemplateColumns="94%"
-                }
             })
         }
         swipeLeft(el){
             el.addEventListener("click", ()=>{
-                
                 if (this.navport.className="transform navitem nav_inactive") {
                     this.navport.className="transform navitem nav_active"
                     this.navover.className="transform navitem nav_inactive"
                 }
+                this.rightarrowimage.style.opacity="1"
+                this.leftarrowimage.style.opacity="0.1"
                 this.mainover.classList.remove("margin-rightplus")
-                this.mainport.classList.remove("margin-leftminus")
-                
-                const i=setInterval(() => {
-                    if (parseInt(window.getComputedStyle(this.mainover, null).getPropertyValue("margin-right"))==0) {
-                        this.mainover.classList.remove("displayed")
-                        if (window.matchMedia("(min-width:1200px)").matches) {
-                            this.rightarrow.style.display="grid"
-                            this.leftarrow.style.display="none"
-                            this.mainport.append(this.rightarrow)
-                            this.mainover.style.gridTemplateColumns="6 94%"
-                            /*this.rightarrow.style.display="none"
-                            this.mainport.append(this.leftarrow)
-                            this.mainover.style.gridTemplateColumns="94%"*/
-                        }
-                        clearInterval(i)
-                    }
-                }, 500);
-                
+                this.mainport.classList.remove("margin-leftminus")  
             })
-        }
-        arrowCheck(){
-            
         }
     }
     const n = new Navigationbar(new NavigationModel,new NavigationView)

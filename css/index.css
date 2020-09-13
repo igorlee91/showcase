@@ -42,6 +42,13 @@
     font-size: 14px;
     line-height: 17px;
 }
+/******************************************************************/    
+html{
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+}
 /***************************BODY***************************************/    
 body{
     margin: 0;
@@ -86,6 +93,7 @@ body{
         display: grid;
         grid-template-columns: 100% 100%;
         justify-items: center;
+        overflow-x: hidden;
     }
     .main_port{
         min-height:100vh;
@@ -183,7 +191,7 @@ body{
                 max-width: 70%;
                 justify-self: center;
                 align-self: center;
-                transition: all 2s ease;
+                transition: opacity .45s ease-in-out;
             }
         .arrow:hover{
             opacity: 1;
@@ -245,25 +253,6 @@ body{
                     -o-transition: all 2s ease;  /* opera */
                     -ms-transition: all 2s ease; /* IE 10 */
                     
-                }
-                .transform_fast{
-                    transition: all 0.5s linear;
-                }
-                .center_toleft {
-                    
-                    background-color: #45CEE0;
-                    /*
-                    background-color: rgb(0, 0, 0, 0.671);*/
-                    margin-left:-200%;
-                }
-                .left_tocenter{
-                    margin-left:0;
-                }
-                .right_tocenter{
-                    margin-right: 200%;
-                }
-                .center_toright{
-                    margin-right: 0;
                 }
                 .margin-leftminus{
                     margin-left:-200%;
@@ -433,20 +422,24 @@ body{
     /*-------------------------------------  > 1200px  ----------------------------------------*/
     @media(min-width:1200px){
         /*-----------------------------------BODY-----------------------------------------*/
-        body{
-            padding: 0 5%;
-        }
         /*-----------------------------------MAIN-----------------------------------------*/
+        header,nav,footer{
+            width: 88%;
+            margin: auto;
+        }
         main{
             grid-template-columns: 105% 105%;
         }
+        /*main-port*/
+        .main_port{
+            grid-template-columns: 94% 6%;
+            padding: 0 5%;
+        }        
         /*main_over*/
-
         .container_image img,.container_content{
             width: 40%;
         }
         .container_image img{
             opacity: .9;
         }
-        
     }
