@@ -126,6 +126,32 @@ body{
             #zeeslag-id{
                 background-image: url(img/sea.jpg);
             }
+            #vid-fabeltjeskrant{
+                align-self: center;
+                width: 200px;
+                height: 150px;
+            }
+            @media(min-width:337px){
+                #vid-fabeltjeskrant{
+                    align-self: center;
+                    width: 250px;
+                    height: 250px;
+                }
+            }
+            @media(min-width:500px){
+                #vid-fabeltjeskrant{
+                    align-self: center;
+                    width: 480px;
+                    height: 330px;
+                }
+            }
+            @media(min-width:665px){
+                #vid-fabeltjeskrant{
+                    align-self: center;
+                    width: 640px;
+                    height: 480px;
+                }
+            }
             .articlebox{
                 display: flex;
                 flex-direction: column;
@@ -135,13 +161,16 @@ body{
                 outline: .5px solid #f7f7f7;
             }
                 .art_title{
-                    min-width: 70px;
-                    width: 25%; 
+                   min-width: 80%;
+                   display: flex;
+                   flex-wrap: wrap;
+                   justify-content: center;
                 }
                     .art_title a{
                         text-decoration: none;
                     }
                         .art_title p{
+                            display: inline-block;
                             padding: .1rem;
                             text-align: center;
                                 border: 1px solid rgba(164, 175, 173, 0.342);
